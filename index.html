@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>online notepad</title>
+    <link rel="stylesheet" href="Font-Awesome-master/css/all.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+</head>
+
+<body class="dark-mode">
+    <script src="js/script.js"></script>
+    <!-- Message Box -->
+    <!-- Then put toasts within -->
+    <div class="alert-toast-holder position-absolute h-100 w-100 justify-content-center align-items-center d-flex d-none">
+        <div class="toast" id="alert_toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-body py-4">
+                <button type="button" class="btn-close float-end" data-bs-dismiss="toast" aria-label="Close"></button>
+                <div class="toast-content"></div>
+            </div>
+        </div>
+    </div>
+    <!--End of Message Box -->
+    <!-- Confirm Box -->
+    <div class="alert-toast-holder position-absolute h-100 w-100 justify-content-center align-items-center d-flex d-none">
+        <div class="toast" id="confirm_toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">Confirmation</strong>
+                <button type="button" class="btn btn-sm p-0 bg-none text-white" data-bs-dismiss="toast" aria-label="Close"><i class="fa fa-times"></i></button>
+            </div>
+            <div class="toast-body py-4">
+                <div class="toast-content"></div>
+                <div class="">
+                    <button class="btn btn-sm float-end mx-1 my-2 btn-light" class="btn-close" data-bs-dismiss="toast" type="button">Cancel</button>
+                    <button class="btn btn-sm float-end mx-1 my-2 btn-danger" type="button" id="confirm_delete" data-id="">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End of Confirm Box -->
+
+    <div class="container-fluid py-5 h-100">
+        <div class="row h-100">
+            <div class="col-lg-8" id="noteForm" data-id="">
+                <div class="card card-primary border-primary">
+                    <div class="card-header bg-primary">
+                        <h5 class="card-title">New Note</h5>
+                        <div class="card-tools">
+                            <button class="btn btn-dark btn-sm hide-load  mx-2" id="save" type="button"><i class="fa fa-save "></i> Save</button>
+                            <button class="btn btn-dark btn-sm hide-load mx-2" id="update" type="button"><i class="fa fa-save"></i> Save Update</button>
+                            <button class="btn btn-danger btn-sm hide-load  mx-2" id="delete" type="button"><i class="fa fa-trash"></i> Delete</button>
+                            <button class="btn btn-sm border-0 bg-none hide-load  mx-2" id="reset" type="button"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 contenteditable="true" name="title" class='border-bottom border-primary' data-placeholder="Title"></h3>
+                        <div class="px-1 py-2" contenteditable="true" name="note" data-placeholder="Write your notes here."></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 h-100 ">
+                <h4 class="border-bottom border-primary bg-dark">List of Notes</h4>
+                <div class="form-group my-2">
+                    <input type="text" placeholder="Search" id="search" class="form-control form-control-sm rounded-0 bg-dark text-white" autocomplete="off" />
+                </div>
+                <div class="container-fluid" id="note_list">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<div class="d-none" id="note_collpased">
+    <div class="card note-item mb-3" data-id="">
+        <div class="card-header bg-primary">
+            <h5 class="card-title truncate-1">Title</h5>
+        </div>
+        <div class="card-body truncate-3">
+            Note Content...
+        </div>
+    </div>
+</div>
+<footer>
+    <span>Created By <a href="https://wa.me/08132309947">D3CRYPTOR</a> | <span class="far fa-copyright"></span> 2022 All rights reserved.</span>
+</footer>
